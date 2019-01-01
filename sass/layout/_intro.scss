@@ -1,0 +1,178 @@
+.intro {
+    background: $color-black;
+    position: relative;
+
+    &__left {
+        padding: 0;
+        margin: 0;
+        border-radius: 2rem;
+        height: 50vh;
+        z-index: 1000;
+        padding: 2rem;
+        position: relative;
+        @include fcenter;
+        justify-content: flex-end;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            font-size: 15rem;
+            text-transform: uppercase;
+            color: $color-primary;
+            font-family: 'Major Mono Display', monospace;
+
+            &::before {
+                content: attr(data-text);
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: -30%;
+                left: 0%;
+                transform-origin: bottom;
+                transform: rotateX(180deg);
+                background: linear-gradient(0deg, $color-primary 0, transparent 80%);
+                -webkit-background-clip: text;
+                color: transparent;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__right {
+        height: 30vh;
+        min-height: 50vh !important;
+        border-radius: 2rem;
+        z-index: 1000;
+        padding: 2rem;
+        @include fcenter;
+        justify-content: flex-start;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            // 
+
+            font-size: 15rem;
+            text-transform: uppercase;
+            color: $color-primary;
+            font-family: 'Major Mono Display', monospace;
+
+            &::before {
+                content: attr(data-text);
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: -30%;
+                left: 0%;
+                transform-origin: bottom;
+                transform: rotateX(180deg);
+                background: linear-gradient(0deg, $color-primary 0, transparent 80%);
+                -webkit-background-clip: text;
+                color: transparent;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__middle {
+        display: flex;
+        justify-content: center;
+        margin-left: -50px;
+        margin-bottom: 4rem;
+
+        .svgdiv {
+            height: 20vh;
+            min-height: calc(100vh - 80vh) !important;
+
+            svg {
+                width: 110rem;                
+                transition: 0.5s ease-in-out all;
+
+                .cls-1 {
+                    fill: none;
+                    stroke: $color-primary;
+                    stroke-width: 3px;
+                }
+
+                #info {
+                    stroke-dasharray: 1000;
+                    animation: dash 6s forwards;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        height: 20vh;
+        min-height: calc(100vh - 80vh) !important;
+        font-size: 30px;
+        margin-left: 10px;
+
+        &-right {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            transition: 1s all ease;
+
+            a {
+                margin-top: 2rem;
+                display: block;
+                height: 6rem;
+                width: 7rem;
+                position: relative;
+                transition: .3s all ease;
+                border: 2px solid $color-primary;
+
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    height: 7rem;
+                    width: 6rem;
+                    @include center;
+                    border: 2px solid $color-primary;
+
+
+                }
+
+                i {
+                    color: $color-primary;
+                    position: absolute;
+                    @include center;
+                    font-size: 3rem;
+                }
+
+                &:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 0 20px $color-primary, 0 0 40px $color-primary-light;
+                }
+
+                &:active {
+                    transform: translateY(1px);
+                }
+            }
+        }
+    }
+
+    &__footer {
+        position: absolute;
+        // background: red;
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            color: $color-primary;
+            font-size: 1.3rem;
+            font-family: 'Major Mono Display', monospace;
+            transform: rotateZ(270deg);
+            transform-origin: left bottom;
+        }
+    }
+}
